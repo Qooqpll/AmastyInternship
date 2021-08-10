@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_OneModule::css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        fasdas
+        <referenceBlock name="page.title">
+            <action method="setPageTitle">
+                <argument name="pageTitle" xsi:type="string">111 </argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block name="OneModule.mainblock" class="Amasty\OneModule\Block\Index" template="Amasty_OneModule::index.phtml" ></block>
+        </referenceContainer>
+    </body>
+</page>
+

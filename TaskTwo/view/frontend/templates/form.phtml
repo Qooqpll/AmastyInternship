@@ -1,0 +1,17 @@
+<?php
+/** @var $block Amasty\TaskTwo\Block\Index */
+?>
+
+<form action="">
+    <input type="text" name="sku">
+    <?php if ($block->showQty()) { ?>
+        <input type="text" name="qty" placeholder="quantity" value="<?= $block->getValueQtyAndHello('Quantity_config/hello_message/quantity_input')?>">
+    <?php } else {} ?>
+    <input type="submit" value="submit">
+</form>
+
+
+<div>
+    <?= $block->getChildHtml() ?>
+</div>
+

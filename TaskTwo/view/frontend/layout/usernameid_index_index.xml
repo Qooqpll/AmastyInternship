@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_TaskTwo::css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block name="TaskTwo.hello" class="Amasty\TaskTwo\Block\Index" template="Amasty_TaskTwo::index.phtml"/>
+            <block name="TaskTwo.form" class="Amasty\TaskTwo\Block\Index" template="Amasty_TaskTwo::form.phtml">
+                <block name="TaskTwo.timer" class="Amasty\TaskTwo\Block\Timer" template="Amasty_TaskTwo::timer.phtml"/>
+            </block>
+
+        </referenceContainer>
+    </body>
+</page>
+

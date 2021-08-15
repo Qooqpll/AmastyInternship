@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Amasty_TaskTwo" translate="label" sortOrder="10">
+            <label>Amasty traning module</label>
+        </tab>
+        <tab id="Amasty_Quantity" translate="label" sortOrder="10">
+            <label>Quantity mdule</label>
+        </tab>
+
+        <section id="Quantity_config" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Amasty Quantity config</label>
+            <tab>Amasty_Quantity</tab>
+            <resource>Amasty_TaskTwo::config</resource>
+            <group id="hello_message" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Модуль</label>
+                <field id="enabled_module" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Активировать модуль</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="text_message" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Текст приветствия</label>
+                    <validate>required-entry validate-length minimum-length-10 maximum-length-500</validate>
+                    <depends>
+                        <field id="enabled_module">1</field>
+                    </depends>
+                </field>
+                <field id="enabled_quantity" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Активировать поле</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enabled_module">1</field>
+                    </depends>
+                </field>
+                <field id="quantity_input" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Количество</label>
+                    <validate>required-entry validate-number</validate>
+                    <depends>
+                        <field id="enabled_quantity">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+
+        <section id="task_config" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Amasty Module config</label>
+            <tab>Amasty_TaskTwo</tab>
+            <resource>Amasty_TaskTwo::config</resource>
+            <group id="general" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General configuration</label>
+                <field id="enabled" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Module Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="greeting_text" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Greeting text</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

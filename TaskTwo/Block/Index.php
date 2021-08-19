@@ -36,4 +36,9 @@ class Index extends Template
         return $this->scopeConfig->isSetFlag('Quantity_config/hello_message/enabled_quantity');
     }
 
+    public function formAction()
+    {
+        return $this->getUrl('*/index/addcart');
+    }
+
 }

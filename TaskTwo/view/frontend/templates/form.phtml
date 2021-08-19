@@ -2,7 +2,7 @@
 /** @var $block Amasty\TaskTwo\Block\Index */
 ?>
 
-<form action="">
+<form method="get" action="<?= $block->getUrl('username/index/addcart')?>">
     <input type="text" name="sku">
     <?php if ($block->showQty()) { ?>
         <input type="text" name="qty" placeholder="quantity" value="<?= $block->getValueQtyAndHello('Quantity_config/hello_message/quantity_input')?>">

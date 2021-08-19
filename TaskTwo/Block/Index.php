@@ -4,8 +4,11 @@
 namespace Amasty\TaskTwo\Block;
 
 
+use Laminas\Db\ConfigProvider;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+
+
 
 class Index extends Template
 {
@@ -23,7 +26,8 @@ class Index extends Template
         parent::__construct($context, $data);
     }
 
-    public function getValueQtyAndHello($path) {
+    public function getValueQtyAndHello($path)
+    {
         return $this->scopeConfig->getValue($path);
     }
 
@@ -32,8 +36,9 @@ class Index extends Template
         return $this->scopeConfig->isSetFlag('Quantity_config/hello_message/enabled_quantity');
     }
 
-   /* public function getValueQty()
+    public function formAction()
     {
-        return $this->scopeConfig->getValue('Quantity_config/hello_message/quantity_input');
-    }*/
+        return $this->getUrl('*/index/addcart');
+    }
+
 }

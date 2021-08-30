@@ -1,3 +1,26 @@
 .columns{
     border: 10px solid red;
 }
+
+.wrapper-input {
+    display: flex;
+}
+.form {
+    width: 450px;
+}
+
+.sku-input {
+    width:300px;
+}
+
+.qty-input {
+    width:150px;
+}
+
+.submit {
+    float: right;
+}
+.wrapper-data {
+    border: 1px solid gray;
+    list-style-type: none;
+}

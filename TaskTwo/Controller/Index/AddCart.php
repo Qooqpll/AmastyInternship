@@ -61,7 +61,6 @@ class AddCart extends Action
 
     public function execute()
     {
-        die();
         $quote = $this->session->getQuote();
         if (!$quote->getId()) {
             $quote->save();

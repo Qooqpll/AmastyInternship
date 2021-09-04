@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <magemastery_config>
+            <general>
+                <promo_sku>123</promo_sku>
+                <for_sku>for sku</for_sku>
+            </general>
+        </magemastery_config>
+    </default>
+</config>

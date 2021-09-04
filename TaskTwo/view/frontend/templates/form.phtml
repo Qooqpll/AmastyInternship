@@ -1,8 +1,7 @@
 <?php
 /** @var $block Amasty\TaskTwo\Block\Index */
 ?>
-
-<form method="get" action="<?= $block->getUrl('username/index/addcart')?>" class="form">
+<form method="POST" action="<?= $block->formAction()?>" class="form">
     <div class="wrapper-input">
         <div data-bind="scope: 'coolAutocomplete'" class="sku-input">
 

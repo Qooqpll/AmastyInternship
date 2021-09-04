@@ -4,10 +4,10 @@
 namespace Amasty\TaskTwo\Block;
 
 
-use Laminas\Db\ConfigProvider;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\App\Config\ScopeConfigInterface;
-
+use Magento\Framework\Event\ManagerInterface as EventManager;
+use Amasty\TaskTwo\Api\Data\NameProviderInterface;
 
 
 class Index extends Template
@@ -17,11 +17,25 @@ class Index extends Template
      */
     private $scopeConfig;
 
+    /**
+     * @var EventManager
+     */
+    private $eventManager;
+
+    /**
+     * @var NameProviderInterface
+     */
+    private $nameProvider;
+
     public function __construct(
-        Template\Context $context, array $data = [],
-        ScopeConfigInterface $scopeConfig
+        NameProviderInterface $nameProvider,
+        EventManager          $eventManager,
+        Template\Context      $context, array $data = [],
+        ScopeConfigInterface  $scopeConfig
     )
     {
+        $this->nameProvider = $nameProvider;
+        $this->eventManager = $eventManager;
         $this->scopeConfig = $scopeConfig;
         parent::__construct($context, $data);
     }
@@ -39,6 +53,16 @@ class Index extends Template
     public function formAction()
     {
         return $this->getUrl('*/index/addcart');
+    }
+
+    public function helloWorld($name)
+    {
+        $this->eventManager->dispatch(
+             'asmasty_tasktwo_check_name',
+             ['name_to_check' => $name]
+         );
+
+        return 'hey ' . $name;
     }
 
 }

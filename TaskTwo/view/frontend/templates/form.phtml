@@ -1,0 +1,63 @@
+<?php
+/** @var $block Amasty\TaskTwo\Block\Index */
+?>
+<form method="POST" action="<?= $block->formAction()?>" class="form">
+    <div class="wrapper-input">
+        <div data-bind="scope: 'coolAutocomplete'" class="sku-input">
+
+        <label for="search">search:</label>
+        <input name="sku" type="text" data-bind="textInput: searchText" />
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+
+        <div class="qty-input">
+            <label for="qty">qty:</label>
+            <?php if ($block->showQty()) { ?>
+                <input  type="text" name="qty" placeholder="quantity" value="<?= $block->getValueQtyAndHello('Quantity_config/hello_message/quantity_input')?>">
+            <?php } else {} ?>
+        </div>
+    </div>
+    <input type="submit" value="submit" class="submit">
+</form>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "coolAutocomplete": {
+                    "component": "Amasty_TaskTwo/js/koAutocomplete",
+                    "template" : "Amasty_TaskTwo/koAutocomplete"
+                }
+            }
+        }
+    }
+}
+</script>
+<!--<div class="search-widget"></div>
+    <label for="search-label">Search</label>
+    <input type="text" name="search" id="search-input">
+    <ul class= h-result-list">
+        <li>
+            hello
+        </li>
+    </ul>
+    -->
+
+
+<div>
+    <?= $block->getChildHtml() ?>
+</div>
+
+<!--    <script type="text/x-magento-init">
+        {
+            ".search-widget": {
+                "Amasty_TaskTwo/js/searchAutoComplete" : {
+                    "minChars" : 3
+                }
+            }
+        }
+    </script>
+-->
+
+

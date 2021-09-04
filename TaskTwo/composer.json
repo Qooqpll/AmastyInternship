@@ -1,18 +1,16 @@
 {
-    "name": "amasty/one-module",
+    "name": "amasty/task-two",
     "type": "magento2-module",
     "version": "1.0",
     "require": {
         "php": "~7.3.0||~7.4.0"
-
     },
     "autoload": {
         "files": [
             "registration.php"
         ],
         "psr-4": {
-            "Amasty\\OneModule\\": ""
+            "Amasty\\TaskTwo\\": ""
         }
     }
 }
-

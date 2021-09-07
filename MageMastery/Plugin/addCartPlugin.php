@@ -49,18 +49,14 @@ class addCartPlugin
         if(!isset($params['product']) && isset($params['sku']) && isset($params['qty'])) {
             $sku = $params['sku'];
             $qty = $params['qty'];
-            /*$product = $this->productRepository->get($sku);
+            $product = $this->productRepository->get($sku);
             $quote->addProduct($product, $qty);
-            $quote->save();*/
+            $quote->save();
 
             $this->eventManager->dispatch(
                 'amasty_magemastery_sku',
                 ['promo_sku', $sku],
             );
-            /*$productId = $product->getId();
-            if($productId) {
-
-            }*/
         }
 
 

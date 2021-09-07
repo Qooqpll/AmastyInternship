@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Amasty\TaskTwo\Block\Index"> <!-- Класс на который мы пишем плагин -->
-        <plugin name="getFormAction" type="Amasty\MageMastery\Plugin\FormActionPlugin"/> <!-- Класс плагина -->
+    <!--<type name="Amasty\TaskTwo\Block\Index"> &lt;!&ndash; Класс на который мы пишем плагин &ndash;&gt;
+        <plugin name="getFormAction" type="Amasty\MageMastery\Plugin\FormActionPlugin"/> &lt;!&ndash; Класс плагина &ndash;&gt;
     </type>
-    <type name="Magento\Checkout\Controller\Cart\Add"> <!-- Класс на который мы пишем плагин -->
-        <plugin name="getFormAction" type="Amasty\MageMastery\Plugin\addCartPlugin"/> <!-- Класс плагина -->
-    </type>
+    <type name="Magento\Checkout\Controller\Cart\Add"> &lt;!&ndash; Класс на который мы пишем плагин &ndash;&gt;
+        <plugin name="getFormAction" type="Amasty\MageMastery\Plugin\addCartPlugin"/> &lt;!&ndash; Класс плагина &ndash;&gt;
+    </type>-->
 </config>

@@ -12,7 +12,7 @@ use Magento\Checkout\Model\Session as CheckoutSession;
 class CheckSkuForPromoSkuObserver implements ObserverInterface
 {
     /**
-     * @var CheckoutSession
+     * @var ProductRepositoryInterface
      */
     private $productRepository;
 
@@ -49,30 +49,25 @@ class CheckSkuForPromoSkuObserver implements ObserverInterface
         }
     }
 
-    public function addCart($sku, $qty = 1)
+    public function addCart($sku)
     {
         $quote = $this->session->getQuote();
         $product = $this->productRepository->get($sku);
-        if($product) {
-            $quote->addProduct($sku, $qty);
-            $quote->save();
-        }
+        $quote->addProduct($product, 1);
+        $quote->save();
+
     }
 
     public function execute(Observer $observer)
     {
-        $sku = $observer->getData('promo_sku');
+        $sku = '24-MB01';//$observer->getData('promo_sku');
         $quote = $this->session->getQuote();
         if (!$quote->getId()) {
             $quote->save();
         }
-
         $promoSku = $this->promoSku($sku);
         if($promoSku) {
-            $this->addCart($promoSku, 1);
-        } else {
-            $this->addCart($sku);
+            $this->addCart($promoSku);
         }
     }
-
 }

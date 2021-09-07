@@ -3,15 +3,20 @@
 
 namespace Amasty\TaskTwo\Block;
 
-
+use Amasty\TaskTwo\Model\BlacklistRepository;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Event\ManagerInterface as EventManager;
-use Amasty\TaskTwo\Api\Data\NameProviderInterface;
 
 
 class Index extends Template
 {
+
+    /**
+     * @var BlacklistRepository
+     */
+    private $blacklistRepository;
+
     /**
      * @var ScopeConfigInterface
      */
@@ -25,16 +30,18 @@ class Index extends Template
     /**
      * @var NameProviderInterface
      */
-    private $nameProvider;
+    //private $nameProvider;
 
     public function __construct(
-        NameProviderInterface $nameProvider,
+        BlacklistRepository $blacklistRepository,
+        //NameProviderInterface $nameProvider,
         EventManager          $eventManager,
         Template\Context      $context, array $data = [],
         ScopeConfigInterface  $scopeConfig
     )
     {
-        $this->nameProvider = $nameProvider;
+        $this->blacklistRepository = $blacklistRepository;
+        //$this->nameProvider = $nameProvider;
         $this->eventManager = $eventManager;
         $this->scopeConfig = $scopeConfig;
         parent::__construct($context, $data);
@@ -57,10 +64,10 @@ class Index extends Template
 
     public function helloWorld($name)
     {
-        $this->eventManager->dispatch(
+       /* $this->eventManager->dispatch(
              'asmasty_tasktwo_check_name',
              ['name_to_check' => $name]
-         );
+         );*/
 
         return 'hey ' . $name;
     }

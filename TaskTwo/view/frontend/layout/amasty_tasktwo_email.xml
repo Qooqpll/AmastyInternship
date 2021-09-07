@@ -1,0 +1,9 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <block class="Amasty\TaskTwo\Block\Email\Blacklist"
+               name="amasty.tasktwo.blacklist"
+               template="Amasty_TaskTwo::email/blacklist.phtml"
+        />
+    </body>
+</page>

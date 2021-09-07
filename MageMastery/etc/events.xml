@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!--<event name="asmasty_tasktwo_check_name">
+        <observer name="checkIsVasya" instance="Amasty\MageMastery\Observer\CheckIsVasyaObserver"/>
+    </event>-->
+    <!--<event name="amasty_magemastery_sku">
+        <observer name="skuForPromoSku" instance="Amasty\MageMastery\Observer\CheckSkuForPromoSkuObserver"/>
+    </event>-->
+</config>

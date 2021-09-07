@@ -1,0 +1,19 @@
+<!--@subject Amasty TaskTwo Blacklist Notification  @-->
+<!--@vars
+{
+"var blacklist":"Blacklist",
+"var blacklist_id":"Blacklist ID",
+"var blacklist_qty":"Blacklist qty",
+"var blacklist_sku":"Blacklist SKU",
+"var blacklist_email":"Blacklist email"
+}
+@-->
+{{template config_path="design/email/header_template"}}
+<p>{{trans "Your black list %blacklist_id "blacklist_id=$blacklist_id"}}</p>
+<p>{{var blacklist.sku}}</p>
+<p>{{var blacklist.qty}}</p>
+{{layout
+handle=amasty_tasktwo_email
+blacklist=$blacklist
+}}
+{{template config_path="design/email/footer_template"}}
